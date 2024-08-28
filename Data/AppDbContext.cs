@@ -1,0 +1,57 @@
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using RolesAuth.Models;
+
+namespace RolesAuth.Data
+{
+    public class AppDbContext : IdentityDbContext
+    {
+        public AppDbContext(DbContextOptions options) : base(options)
+        {
+        }
+
+        public DbSet<CafeEntity> Cafes { get; set; }
+
+        public DbSet<BillEntity> Bill { get; set; }
+
+        public DbSet<OrderEntity> Order { get; set; }
+
+        public DbSet<OrderItemEntity> OrderItem { get; set; }
+        public DbSet<CustomerEntity> Customer { get; set; }
+
+        public DbSet<ApplicationUser> ApplicationUser { get; set; }
+
+        public DbSet<CategoriesEntity> Categories { get; set; }
+
+        public DbSet<ProductEntity> Products { get; set; }
+
+        public DbSet<CartItems> CartItems { get; set; }
+
+        public DbSet<Review> Review { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            // Configure one-to-one relationship
+            modelBuilder.Entity<ApplicationUser>()
+                .HasOne(a => a.CafeDetails)
+                .WithOne(c => c.User)
+                .HasForeignKey<CafeEntity>(c => c.UserId)
+                .IsRequired(false)
+                .OnDelete(DeleteBehavior.Cascade); // Use DeleteBehavior.Cascade for automatic deletion
+
+            modelBuilder.Entity<CartItems>()
+               .HasOne(c => c.Customer)
+               .WithMany(u => u.CartItems)
+               .HasForeignKey(c => c.CustomerId)
+               .OnDelete(DeleteBehavior.Cascade); // Add this line for cascade delete
+
+            
+        }
+
+        public DbSet<RolesAuth.Models.CustomerEntity>? CustomerEntity { get; set; }
+
+        
+    }
+}
