@@ -1,0 +1,31 @@
+﻿@page
+@model RolesAuth.Areas.Identity.Pages.CartModel
+
+<h2>Your Cart</h2>
+
+@if (Model.NotificationMessage != null)
+{
+    <div class="alert alert-success">
+        @Model.NotificationMessage
+    </div>
+}
+
+<form method="post">
+    <input type="hidden" name="itemId" value="123" />
+    <button type="submit" asp-page-handler="AddToCart">Add to Cart</button>
+</form>
+
+<style>
+    .alert {
+        padding: 15px;
+        margin-bottom: 20px;
+        border: 1px solid transparent;
+        border-radius: 4px;
+    }
+
+    .alert-success {
+        color: #155724;
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+    }
+</style>
