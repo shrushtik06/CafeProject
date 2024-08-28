@@ -1,0 +1,116 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    background: linear-gradient(#ffeede, #8db9a9);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    /*background-image: url('https://t3.ftcdn.net/jpg/03/15/40/34/360_F_315403482_MVo1gSOOfvwCwhLZ9hfVSB4MZuQilNrx.jpg');
+    background-size: cover;
+    background-position: center;*/
+    /*background-image: url('https://t3.ftcdn.net/jpg/05/55/17/10/360_F_555171048_f7Mhww7f1AcA4YNbqVSRu2rlSs9Phujf.jpg');*/
+}
+
+.navbar-logo {
+    height: 40px; /* Set the height of the logo */
+    width: auto; /* Allow the width to adjust based on the height */
+    margin-right: 10px; /* Add spacing between the logo and text */
+}
+
+.navbar-brand {
+    color: burlywood; /* Set the font color of the brand */
+
+    font-weight: bold; /* Set the font weight */
+    font-size: 24px; /* Set the font size */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center the logo vertically */
+    font-family: "Segoe Script" /* Set the font family */
+}
+.nav-link {
+    color: burlywood;
+    
+}
+
+/* CafeApp.styles.css */
+body, html {
+    height: 100%;
+}
+.table th {
+    background-color: #325f53;
+    color: burlywood;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    
+    /*justify-content: center;
+    align-items: center;*/
+}
+
+.homePageContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; /* Add margin to the bottom of the home page container */
+}
+
+.leftContent {
+    flex: 1;
+    padding: 20px;
+}
+
+.rightContent {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+.enlargedBlueText {
+    color: #325f53; /* Set the color to blue */
+    font-size: 24px; /* Set the font size */
+}
+
+.simple {
+    font-size: 18px; /* Set the font size */
+}
+
+.imgHome {
+    max-width: 50%; /* Limit the width of the image */
+}
+
+.image {
+    max-width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+/*.row {
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+}
+*/
+.form-floating {
+    margin-bottom: 10px;
+}
+.btn{
+    margin-top: 10px;
+}
